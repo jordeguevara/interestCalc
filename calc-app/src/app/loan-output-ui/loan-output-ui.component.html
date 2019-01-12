@@ -3,22 +3,22 @@
     <div class="container">
         <section>
             <p>Amount
-            <span>$ {{loanAmount}}</span>
+            <span>$ {{loan.amount}}</span>
             </p>
         </section>
         <section>
             <p>Rate
-            <span>{{interestRate}} %</span>
+            <span>{{loan.rate}} %</span>
             </p>
         </section>
         <section>
             <p>Years
-           <span> {{years}}</span>
+           <span> {{loan.length}}</span>
            </p>
         </section>
         <section>
            <p>Monthly payments
-           <span>$ {{ monthlyPayments}}</span>
+           <span> $ {{loan.monthlyPayment | number:'1.0-0'}}</span>
            </p>
         </section>
     </div>

@@ -32,7 +32,7 @@ export class LoanInputUIComponent implements OnInit {
   }
   // Simple interest = PrinipialAmount(1 + rate(time))
   calculateLoan(loanAmount:number, interestRate: number, numberOfYears: number) :number{
-    return loanAmount*((1 + (interestRate/100))*numberOfYears);
+    return loanAmount*(1 + (interestRate/100)*numberOfYears)/(12*numberOfYears);
   }
 
 

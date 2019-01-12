@@ -13,20 +13,16 @@ export class LoanOutputUIComponent implements OnInit {
 
   loan: Loan = this.loanDataService.getLoan();
   
-  loanAmount = this.loan.amount;
-  interestRate =this.loan.rate;
-  years = this.loan.length;
-  monthlyPayments = this.loan.monthlyPayment;
 
   
 
 
   constructor(private loanDataService: LoanDataService) { 
-  
+    
   }
 
   ngOnInit() {
-    console.log(this.loan)
+   
   }
 
 }

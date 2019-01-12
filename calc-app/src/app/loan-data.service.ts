@@ -17,7 +17,7 @@ export class LoanDataService {
 
   addLoan(differentLoan){
     this.loan.amount = differentLoan.amount;
-    this.loan.rate = differentLoan.rate/100;
+    this.loan.rate = differentLoan.rate;
     this.loan.length = differentLoan.length;
     this.loan.monthlyPayment = differentLoan.monthlyPayment;
   }
