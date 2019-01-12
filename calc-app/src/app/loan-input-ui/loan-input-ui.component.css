@@ -1,0 +1,54 @@
+.loanInputUI{
+    background-color: #fff;
+    height: 300px;
+    width: 750px;
+    margin: 2.5rem auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.loan{
+    display: flex;
+}
+
+
+input[type=number] {
+height: 50px;
+}
+
+.left{
+    flex-basis: 50%;
+    background: yellow;
+}
+.right{
+    flex-basis: 50%;
+    background: yellow;
+}
+.loanYear{
+
+}
+
+.loanPercentage{
+
+}
+
+.calculate{
+    background-color: #D13239;
+    color: #fff;
+    margin: 0 auto;
+    width: 200px;
+    height: 40px;
+}
+
+
+.circleWithNum{
+
+height: 40px;
+width: 40px;
+background-color: #1B3664; 
+border-radius: 50%;
+color: #fff;
+text-align: center;
+font-size: 2rem;
+padding: 5px;
+}
