@@ -1,4 +1,7 @@
+import { LoanDataService } from './../loan-data.service';
 import { Component, OnInit } from '@angular/core';
+import {Loan} from '../loan'
+import { Observable, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-loan-output-ui',
@@ -7,15 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoanOutputUIComponent implements OnInit {
 
-  loanAmount = 0;
-  interestRate =0;
-  years = 0;
-  monthlyPayments = 0;
+
+  loan: Loan = this.loanDataService.getLoan();
+  
+  loanAmount = this.loan.amount;
+  interestRate =this.loan.rate;
+  years = this.loan.length;
+  monthlyPayments = this.loan.monthlyPayment;
+
+  
 
 
-  constructor() { }
+  constructor(private loanDataService: LoanDataService) { 
+  
+  }
 
   ngOnInit() {
+    console.log(this.loan)
   }
 
 }
+ 

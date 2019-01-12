@@ -1,7 +1,8 @@
+import { LoanDataService } from './../loan-data.service';
 import { element } from 'protractor';
 import { Component, OnInit } from '@angular/core';
-import { shouldCallLifecycleInitHook } from '@angular/core/src/view';
-import { NOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR } from '@angular/core/src/view/provider';
+import {Loan} from '../loan';
+
 
 @Component({
   selector: 'app-loan-input-ui',
@@ -10,7 +11,7 @@ import { NOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR } from '@angular/core/src/view/pr
 })
 export class LoanInputUIComponent implements OnInit {
 
-  constructor() { 
+  constructor(private loanDataService: LoanDataService ) { 
 
   }
 
@@ -18,18 +19,20 @@ export class LoanInputUIComponent implements OnInit {
   }
 
   // get the data from input fields and calculates intetest rate 
-  getSimpleInterest(){
+  getLoan(){
     let loanAmount:any= document.querySelector('#loanAmount');
     let interestRate: any= document.querySelector('#loanPercent');
     let years: any= document.querySelector('#years');
 
     let result:number = this.calculateLoan(loanAmount.value , interestRate.value ,years.value);
-    console.log(result);
-    return result;
+    const loanInfo = new Loan(loanAmount.value , interestRate.value ,years.value, result);
+
+    this.loanDataService.addLoan(loanInfo);
+    return loanInfo;
   }
   // Simple interest = PrinipialAmount(1 + rate(time))
   calculateLoan(loanAmount:number, interestRate: number, numberOfYears: number) :number{
-    return loanAmount*((1 + interestRate)*numberOfYears);
+    return loanAmount*((1 + (interestRate/100))*numberOfYears);
   }
 
 
