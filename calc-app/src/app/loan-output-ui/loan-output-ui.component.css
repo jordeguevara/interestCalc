@@ -5,3 +5,28 @@
     margin: 3rem auto;
 }
 
+.container{
+    display: flex;
+    width: 750px;
+}
+.container::before{
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    width: 90%;
+}
+
+section{
+    flex-basis: 25%;
+    text-align: center;
+    height: 200px;
+    
+}
+h1{
+    position: relative;
+    left: 25px;
+    padding: 5px;
+}
+
+span{
+    display: block;
+}

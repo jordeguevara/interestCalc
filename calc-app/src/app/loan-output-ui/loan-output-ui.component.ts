@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoanOutputUIComponent implements OnInit {
 
+  loanAmount = 0;
+  interestRate =0;
+  years = 0;
+  monthlyPayments = 0;
+
+
   constructor() { }
 
   ngOnInit() {

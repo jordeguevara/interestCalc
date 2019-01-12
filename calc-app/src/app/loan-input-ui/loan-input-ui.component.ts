@@ -1,5 +1,7 @@
 import { element } from 'protractor';
 import { Component, OnInit } from '@angular/core';
+import { shouldCallLifecycleInitHook } from '@angular/core/src/view';
+import { NOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR } from '@angular/core/src/view/provider';
 
 @Component({
   selector: 'app-loan-input-ui',
@@ -15,14 +17,20 @@ export class LoanInputUIComponent implements OnInit {
   ngOnInit() {
   }
 
-  calculate(){
-    let firstElement: HTMLElement = document.querySelector('#loanAmount');
-    let secondElement: HTMLElement = document.querySelector('#loanAmount');
-  }
+  // get the data from input fields and calculates intetest rate 
+  getSimpleInterest(){
+    let loanAmount:any= document.querySelector('#loanAmount');
+    let interestRate: any= document.querySelector('#loanPercent');
+    let years: any= document.querySelector('#years');
 
-  add(x: number, y: number): number {
-    return x + y;
-}
+    let result:number = this.calculateLoan(loanAmount.value , interestRate.value ,years.value);
+    console.log(result);
+    return result;
+  }
+  // Simple interest = PrinipialAmount(1 + rate(time))
+  calculateLoan(loanAmount:number, interestRate: number, numberOfYears: number) :number{
+    return loanAmount*((1 + interestRate)*numberOfYears);
+  }
 
 
 }

@@ -1,6 +1,6 @@
 .loanInputUI{
     background-color: #fff;
-    height: 300px;
+    height: 400px;
     width: 750px;
     margin: 2.5rem auto;
     display: flex;
@@ -9,20 +9,48 @@
 
 .loan{
     display: flex;
+    margin-bottom: 1.5rem;
+    height: 50px;
+  
+  
 }
 
+.loan:before{
+    display: flex;
+    margin-bottom: 1.5rem;
+    height: 50px;
+        width   : 90%;  
+        border-bottom:  1px solid #e5e5e5;
+      
+}
+
+h1{
+    position: relative;
+    left: 25px;
+    width: 90%;
+    padding: 5px;
+    border-bottom:  2px solid #e5e5e5;
+}
+ span{
+     position: relative;
+     left: 6rem;
+ }
 
 input[type=number] {
-height: 50px;
+height: 40px;
+width: 200px;
 }
 
 .left{
     flex-basis: 50%;
-    background: yellow;
+
+    height: 50px;
+  
 }
 .right{
     flex-basis: 50%;
-    background: yellow;
+    height: 50px;
+   
 }
 .loanYear{
 
@@ -38,17 +66,23 @@ height: 50px;
     margin: 0 auto;
     width: 200px;
     height: 40px;
+    border: none;
 }
 
 
 .circleWithNum{
 
-height: 40px;
-width: 40px;
-background-color: #1B3664; 
-border-radius: 50%;
-color: #fff;
-text-align: center;
-font-size: 2rem;
-padding: 5px;
+    height: 30px;
+    width: 30px;
+    background-color: #1B3664;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+    padding: 5px;
+    top: 50%;
+    margin-top: -20px;
+    left: 25px;
+    position: relative;
+
 }
