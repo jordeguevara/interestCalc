@@ -1,6 +1,8 @@
 # CalcApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+<img width="1295" alt="screen shot 2019-01-12 at 5 47 22 pm" src="https://user-images.githubusercontent.com/34716202/51089063-d49b1580-171b-11e9-99ba-c6c884d16069.png">
+
 
 ## Development server
 
